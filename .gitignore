@@ -1,0 +1,7 @@
+figures/
+venv/
+.python-version
+0_legacy_files/
+**/.DS_Store
+**/.ipynb_checkpoints
+**/__pycache__

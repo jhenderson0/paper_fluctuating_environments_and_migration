@@ -1,0 +1,20 @@
+# fonts
+text.usetex: True 
+font.family: serif
+font.serif: cm
+font.sans-serif: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+
+
+# axes
+axes.labelsize: 14  
+axes.spines.top    : False
+axes.spines.right  : False
+
+# ticks
+xtick.direction: inout
+ytick.direction: inout
+xtick.labelsize: 15
+ytick.labelsize: 15
+
+# legend
+legend.fontsize: 12  
