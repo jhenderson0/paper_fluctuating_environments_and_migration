@@ -37,6 +37,35 @@ def mean_field_y_coloured_noise_step(dt, y, eta, M, D, lamb):
     
     return y, eta
 
+# Shot-noise simulations
+
+def two_patch_x_shot_noise_step(dt, x, eta, M, D, lamb, beta):
+    
+    x = x + ((-M * np.sinh(x) + eta) * dt)
+
+    # shot-noise parameters
+    encounter_rate = lamb / beta
+    A = np.sqrt(2.0 * D * lamb * beta) 
+
+    a = np.exp(-lamb * dt)
+    eta = a * eta
+    
+    #number of antigen encounters
+    N_plus = np.random.poisson(encounter_rate  * dt, size=len(eta))
+    N_minus = np.random.poisson(encounter_rate  * dt, size=len(eta))
+
+    idx_plus = np.flatnonzero(N_plus)
+    for i in idx_plus:
+        u = np.random.uniform(0.0, dt, size=N_plus[i])
+        eta[i] += np.sum(A * np.exp(-lamb * (dt - u)))
+
+    idx_minus = np.flatnonzero(N_minus)
+    for i in idx_minus:
+        u = np.random.uniform(0.0, dt, size=N_minus[i])
+        eta[i] -= np.sum(A * np.exp(-lamb * (dt - u)))
+
+    return x, eta
+
 # Simulation runner
 
 def run_simulation(x0, t_max, n_runs, n_steps, simulation_step, t0=0, eta0=0):

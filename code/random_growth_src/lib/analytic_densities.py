@@ -102,7 +102,7 @@ def mean_field_steady_state_density_y_coloured_noise(y, M, D, lamb, approximate_
         zeta = solve_zeta(M, D, lamb)
         
     else:
-        zeta =  approximation_for_zeta(M, D, lamb)
+        zeta =  weak_noise_approximation_for_zeta(M, D, lamb)
     
     Z = partition_function_y_coloured_noise(M, D, lamb, zeta)
     
@@ -114,7 +114,7 @@ def mean_field_steady_state_density_x_coloured_noise(x, M, D, lamb, approximate_
         zeta = solve_zeta(M, D, lamb)
         
     else:
-        zeta =  approximation_for_zeta(M, D, lamb)
+        zeta =  weak_noise_approximation_for_zeta(M, D, lamb)
     
     Z = partition_function_y_coloured_noise(M, D, lamb, zeta)
     

@@ -5,3 +5,4 @@ venv/
 **/.DS_Store
 **/.ipynb_checkpoints
 **/__pycache__
+project_style_2.mplstyle
