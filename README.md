@@ -1,6 +1,6 @@
 # Fluctuating environments are sufficient to drive substantial variability in species abundance across locations
 
-![alt text](graphical_abstract.svg)
+![alt text](graphical_abstract_v1.svg)
 
 This repository contains the relevant source code for the manuscript "Fluctuating environments are sufficient to drive substantial variability in species abundance across locations"
 
